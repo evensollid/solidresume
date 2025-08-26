@@ -30,7 +30,7 @@
           {{ with $cv.profile.location }}{{ . }}{{ end }}
         </div>
       </div>
-      {{ partial "theme-toggle.html" . }}
+      {{/* theme toggle removed: color scheme configured in config */}}
     </header>
 
     {{ block "main" . }}{{ end }}
@@ -40,23 +40,11 @@
 
   <script>
     (function(){
-      const key = "cv-theme";
       const root = document.documentElement;
-      const btn = document.querySelector('[data-theme-toggle]');
-      function apply(mode){
-        if(mode === "light"){ root.style.colorScheme = "light"; }
-        else if(mode === "dark"){ root.style.colorScheme = "dark"; }
-        else { root.style.colorScheme = ""; } // auto
-      }
-      const saved = localStorage.getItem(key) || "auto";
-      apply(saved);
-      if(btn){
-        btn.addEventListener('click', () => {
-          const next = saved === "light" ? "dark" : saved === "dark" ? "auto" : "light";
-          localStorage.setItem(key, next);
-          location.reload();
-        });
-      }
+      const mode = "{{ .Site.Params.colorScheme | default "auto" }}";
+      if(mode === "light"){ root.style.colorScheme = "light"; }
+      else if(mode === "dark"){ root.style.colorScheme = "dark"; }
+      else { root.style.colorScheme = ""; } // auto
     })();
   </script>
 </body>
