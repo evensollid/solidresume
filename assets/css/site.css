@@ -25,6 +25,7 @@ html, body {
 }
 a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
+footer a { color: inherit; text-decoration: underline; }
 .container {
   max-width: 840px; margin: 2rem auto; padding: 0 1rem;
 }
