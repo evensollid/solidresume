@@ -24,3 +24,22 @@ cd SolidResume
 
 # Start development server
 hugo server -D
+
+Open http://localhost:1313 in your browser.
+
+## Roadmap
+
+- [ ] Basic Hugo site scaffolding
+- [ ] Data-driven CV content (YAML/JSON)
+- [ ] Multilingual setup (EN/NB)
+- [ ] Theming (light/dark toggle)
+- [ ] Print stylesheet for PDF export
+- [ ] SEO + structured data integration
+
+## Contributing
+
+Contributions, ideas, and feedback are welcome! Please note that the project is in an early stage, so discussions and issue reports are especially valuable.
+
+## License
+
+MIT © Even Roland Sollid
