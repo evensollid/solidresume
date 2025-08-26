@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="{{ .Site.Params.siteDescription }}">
+  {{ partial "head/seo.html" . }}
+  <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+
+  {{ $site := resources.Get "css/site.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $site.RelPermalink }}" integrity="{{ $site.Data.Integrity }}" />
+
+  {{ $print := resources.Get "css/print.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $print.RelPermalink }}" integrity="{{ $print.Data.Integrity }}" media="print" />
+
+  {{ partial "head/ld-json.html" . }}
+
+  <link rel="alternate" hreflang="en" href="{{ with .Site.Languages.en }}{{ . | relLangURL "" }}{{ end }}" />
+  <link rel="alternate" hreflang="nb" href="{{ with .Site.Languages.nb }}{{ . | relLangURL "" }}{{ end }}" />
+</head>
+<body>
+  <main class="container" role="main">
+    <header>
+      <div>
+        {{ $cv := index .Site.Data.cv .Site.Language.Lang }}
+        <h1>{{ with $cv.profile.name }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}</h1>
+        <div class="meta">
+          {{ with $cv.profile.role }}{{ . }}{{ end }}{{ if and $cv.profile.role $cv.profile.location }} · {{ end }}
+          {{ with $cv.profile.location }}{{ . }}{{ end }}
+        </div>
+      </div>
+      {{ partial "theme-toggle.html" . }}
+    </header>
+
+    {{ block "main" . }}{{ end }}
+
+    {{ partial "footer.html" . }}
+  </main>
+
+  <script>
+    (function(){
+      const key = "cv-theme";
+      const root = document.documentElement;
+      const btn = document.querySelector('[data-theme-toggle]');
+      function apply(mode){
+        if(mode === "light"){ root.style.colorScheme = "light"; }
+        else if(mode === "dark"){ root.style.colorScheme = "dark"; }
+        else { root.style.colorScheme = ""; } // auto
+      }
+      const saved = localStorage.getItem(key) || "auto";
+      apply(saved);
+      if(btn){
+        btn.addEventListener('click', () => {
+          const next = saved === "light" ? "dark" : saved === "dark" ? "auto" : "light";
+          localStorage.setItem(key, next);
+          location.reload();
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

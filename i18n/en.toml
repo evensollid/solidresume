@@ -1,0 +1,16 @@
+[about]
+other = "About"
+[experience]
+other = "Experience"
+[education]
+other = "Education"
+[projects]
+other = "Projects"
+[skills]
+other = "Skills"
+[languages]
+other = "Languages"
+[contact]
+other = "Contact"
+[download_pdf]
+other = "Download PDF"

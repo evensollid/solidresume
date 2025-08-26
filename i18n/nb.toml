@@ -1,0 +1,16 @@
+[about]
+other = "Om meg"
+[experience]
+other = "Erfaring"
+[education]
+other = "Utdanning"
+[projects]
+other = "Prosjekter"
+[skills]
+other = "Ferdigheter"
+[languages]
+other = "Språk"
+[contact]
+other = "Kontakt"
+[download_pdf]
+other = "Last ned PDF"

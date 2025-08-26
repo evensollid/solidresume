@@ -1,0 +1,97 @@
+{{ define "main" }}
+  {{ $cv := index .Site.Data.cv .Site.Language.Lang }}
+
+  {{ with $cv.profile.summary }}
+  <section class="section" id="about">
+    <h2>{{ i18n "about" }}</h2>
+    <p>{{ . }}</p>
+    {{ with $cv.profile.links }}
+      {{ if gt (len .) 0 }}
+      <p>
+        {{ range $i, $l := . }}
+          <a href="{{ $l.url }}" rel="me">{{ $l.label }}</a>{{ if lt (add $i 1) (len $cv.profile.links) }} · {{ end }}
+        {{ end }}
+      </p>
+      {{ end }}
+    {{ end }}
+  </section>
+  {{ end }}
+
+  {{ with $cv.experience }}
+  {{ if gt (len .) 0 }}
+  <section class="section" id="experience">
+    <h2>{{ i18n "experience" }}</h2>
+    {{ range . }}
+      <h3>{{ .role }}{{ if and .role .company }} — {{ end }}{{ .company }}</h3>
+      <div class="meta">
+        {{ with .start }}{{ . }}{{ end }}{{ if and .start .end }} — {{ end }}{{ with .end }}{{ . }}{{ end }}
+      </div>
+      {{ with .summary }}<p>{{ . }}</p>{{ end }}
+      {{ with .bullets }}{{ if gt (len .) 0 }}<ul class="list">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}{{ end }}
+    {{ end }}
+  </section>
+  {{ end }}
+  {{ end }}
+
+  {{ with $cv.education }}
+  {{ if gt (len .) 0 }}
+  <section class="section" id="education">
+    <h2>{{ i18n "education" }}</h2>
+    {{ range . }}
+      <h3>{{ .degree }}{{ if and .degree .school }} — {{ end }}{{ .school }}</h3>
+      <div class="meta">
+        {{ with .start }}{{ . }}{{ end }}{{ if and .start .end }} — {{ end }}{{ with .end }}{{ . }}{{ end }}
+      </div>
+    {{ end }}
+  </section>
+  {{ end }}
+  {{ end }}
+
+  {{ with $cv.projects }}
+  {{ if gt (len .) 0 }}
+  <section class="section" id="projects">
+    <h2>{{ i18n "projects" }}</h2>
+    {{ range . }}
+      <h3>{{ .name }}{{ with .url }} — <a href="{{ . }}">{{ . }}</a>{{ end }}</h3>
+      {{ with .summary }}<p>{{ . }}</p>{{ end }}
+    {{ end }}
+  </section>
+  {{ end }}
+  {{ end }}
+
+  {{ with $cv.skills }}
+  {{ if gt (len .) 0 }}
+  <section class="section" id="skills">
+    <h2>{{ i18n "skills" }}</h2>
+    <p>{{ range . }}<span class="badge">{{ . }}</span>{{ end }}</p>
+  </section>
+  {{ end }}
+  {{ end }}
+
+  {{ with $cv.spoken_languages }}
+  {{ if gt (len .) 0 }}
+  <section class="section" id="languages">
+    <h2>{{ i18n "languages" }}</h2>
+    <ul class="list">
+      {{ range . }}<li>{{ .name }}{{ with .level }} — {{ . }}{{ end }}</li>{{ end }}
+    </ul>
+  </section>
+  {{ end }}
+  {{ end }}
+
+  {{ with $cv.contact }}
+  <section class="section" id="contact">
+    <h2>{{ i18n "contact" }}</h2>
+    <ul class="list">
+      {{ with .email }}<li><a href="mailto:{{ . }}">{{ . }}</a></li>{{ end }}
+      {{ with .website }}<li><a href="{{ . }}">{{ . }}</a></li>{{ end }}
+    </ul>
+  </section>
+  {{ end }}
+
+  {{ if .Site.Params.printVersion }}
+  <p class="no-print" style="margin-top:1rem;">
+    <a href="javascript:window.print()">{{ i18n "download_pdf" }}</a>
+  </p>
+  {{ end }}
+{{ end }}
