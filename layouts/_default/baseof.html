@@ -30,6 +30,15 @@
           {{ with $cv.profile.location }}{{ . }}{{ end }}
         </div>
       </div>
+      {{ $current := .Site.Language.Lang }}
+      {{ $alternates := where .Sites "Language.Lang" "ne" $current }}
+      {{ if gt (len $alternates) 0 }}
+      <nav class="lang-switcher">
+        {{ range $i, $lang := $alternates }}
+          <a href="{{ $lang.Home.RelPermalink }}">{{ $lang.Language.LanguageName }}</a>{{ if lt (add $i 1) (len $alternates) }} · {{ end }}
+        {{ end }}
+      </nav>
+      {{ end }}
       {{/* theme toggle removed: color scheme configured in config */}}
     </header>
 
