@@ -1,0 +1,10 @@
+{{/* Dev-only guard: warns if configured theme doesn't exist. */}}
+{{- if .Site.IsServer -}}
+  {{- $conf := .Site.Params.themes -}}
+  {{- $def  := cond (and $conf (isset $conf "default")) $conf.default "auto" -}}
+  {{- if and (ne $def "auto") (not (index site.Data.themes $def)) -}}
+    <div style="position:sticky;top:0;z-index:9999;background:#b91c1c;color:#fff;padding:.5rem 1rem;font-family:ui-monospace,Menlo,Consolas,monospace;">
+      ⚠ Theme "{{ $def }}" not found in /data/themes. Falling back to default-light. Add data file "data/themes/{{ $def }}.yaml" or change params.themes.default.
+    </div>
+  {{- end -}}
+{{- end -}}
