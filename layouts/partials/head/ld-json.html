@@ -2,14 +2,16 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person"
-  {{ with $cv.profile.name }}, "name": {{ . | jsonify }}{{ end }}
-  {{ with $cv.profile.role }}, "jobTitle": {{ . | jsonify }}{{ end }}
-  {{ with $cv.profile.location }}, "homeLocation": {{ . | jsonify }}{{ end }}
-  {{ with $cv.profile.email }}, "email": {{ . | jsonify }}{{ end }}
-  {{ with $cv.profile.url }}, "url": {{ . | jsonify }}{{ end }}
-  {{ with $cv.profile.links }}
-    {{ if gt (len .) 0 }}, "sameAs": [{{ $links := slice }}{{ range . }}{{ $links = $links | append .url }}{{ end }}{{ delimit (apply $links "jsonify" ".") ", " }}]{{ end }}
-  {{ end }}
+  "@type": "Person"{{ with $cv.profile.name }},
+  "name": {{ . | jsonify }}{{ end }}{{ with $cv.profile.role }},
+  "jobTitle": {{ . | jsonify }}{{ end }}{{ with $cv.profile.location }},
+  "homeLocation": {{ . | jsonify }}{{ end }}{{ with $cv.profile.email }},
+  "email": {{ . | jsonify }}{{ end }}{{ with $cv.profile.url }},
+  "url": {{ . | jsonify }}{{ end }}{{ with $cv.profile.links }}{{ if gt (len .) 0 }},
+  "sameAs": [
+    {{- $urls := slice -}}
+    {{- range . -}}{{- $urls = $urls | append .url -}}{{- end -}}
+    {{- delimit (apply $urls "jsonify" ".") ", " -}}
+  ]{{ end }}{{ end }}
 }
 </script>

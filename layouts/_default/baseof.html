@@ -15,8 +15,9 @@
 
   {{ partial "head/ld-json.html" . }}
 
-  <link rel="alternate" hreflang="en" href="{{ with .Site.Languages.en }}{{ . | relLangURL "" }}{{ end }}" />
-  <link rel="alternate" hreflang="nb" href="{{ with .Site.Languages.nb }}{{ . | relLangURL "" }}{{ end }}" />
+  {{- range .Sites -}}
+    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Home.RelPermalink }}" />
+  {{- end -}}
 </head>
 <body>
   <main class="container" role="main">

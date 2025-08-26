@@ -4,8 +4,10 @@ title = "SolidResume"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 enableRobotsTXT = true
-paginate = 1
 disableKinds = ["taxonomy", "term", "section"] # can re-enable sitemap later
+
+[pagination]
+pagerSize = 1
 
 [outputs]
 home = ["HTML", "RSS", "JSON"]
