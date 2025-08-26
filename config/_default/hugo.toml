@@ -1,0 +1,36 @@
+baseURL = "/"
+languageCode = "en"
+title = "SolidResume"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+enableRobotsTXT = true
+paginate = 1
+disableKinds = ["taxonomy", "term", "section"] # can re-enable sitemap later
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[params]
+siteDescription = "SolidResume — single-page CV powered by Hugo"
+colorScheme = "auto" # auto|light|dark
+printVersion = true
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[privacy]
+  [privacy.youtube]
+  disabled = true
+  [privacy.twitter]
+  disabled = true
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+    title = "CV — Peter Gibbons"
+
+  [languages.nb]
+    languageName = "Norsk"
+    weight = 2
+    title = "CV — Peter Gibbons"

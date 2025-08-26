@@ -1,0 +1,55 @@
+profile:
+  name: "Peter Gibbons"
+  role: "Programmerer (Allergisk mot TPS-skjema)"
+  location: "Austin, Texas"
+  email: "peter.gibbons@example.com"
+  url: "https://initech.example.com/~pgibbons"
+  summary: >
+    Praktisk anlagt utvikler som liker å kutte unødig byråkrati, forenkle prosesser
+    og beskytte røde stiftemaskiner.
+  links:
+    - label: "LinkedIn"
+      url: "https://www.linkedin.com/in/petergibbons"
+    - label: "GitHub"
+      url: "https://github.com/pgibbons"
+
+experience:
+  - company: "Initech"
+    role: "Programmerer"
+    start: "1999-01"
+    end: "2001-05"
+    summary: >
+      Bidro til kritiske Y2K-tiltak og standardisering av forsideark for TPS-rapporter.
+    bullets:
+      - "Optimaliserte helgearbeid ved å fjerne unødvendige lørdagsøkter"
+      - "Ledet arbeidsgruppe mot papirstopp i printere"
+
+education:
+  - school: "Southwest Texas State University"
+    degree: "Bachelor i informatikk"
+    start: "1993"
+    end: "1997"
+
+projects:
+  - name: "TPS Cover Sheet Generator"
+    url: "https://example.com/tps"
+    summary: "Verktøy for å sikre at alle TPS-rapporter har korrekt forside."
+  - name: "Printer Jam Predictor"
+    url: "https://example.com/pjp"
+    summary: "Enkel modell som forsøker å forutse papirstopp."
+
+skills:
+  - "Go"
+  - "Hugo"
+  - "Prosessforenkling"
+  - "Printer-sanering"
+
+spoken_languages:
+  - name: "Engelsk"
+    level: "Morsmål"
+  - name: "Norsk"
+    level: "Grunnleggende"
+
+contact:
+  email: "peter.gibbons@example.com"
+  website: "https://initech.example.com/~pgibbons"

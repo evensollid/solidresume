@@ -1,0 +1,68 @@
+# Dummy Office Space-style data. Any top-level section can be removed;
+# templates only render sections that exist and are non-empty.
+profile:
+  name: "Peter Gibbons"
+  role: "Software Engineer (TPS Reports Averse)"
+  location: "Austin, TX"
+  email: "peter.gibbons@example.com"
+  url: "https://initech.example.com/~pgibbons"
+  summary: >
+    Results-oriented engineer who believes in removing unnecessary bureaucracy,
+    simplifying processes, and protecting staplers at all costs.
+  links:
+    - label: "LinkedIn"
+      url: "https://www.linkedin.com/in/petergibbons"
+    - label: "GitHub"
+      url: "https://github.com/pgibbons"
+
+# Remove 'experience' entirely or make it an empty list to hide the section.
+experience:
+  - company: "Initech"
+    role: "Software Engineer"
+    start: "1999-01"
+    end: "2001-05"
+    summary: >
+      Contributed to mission-critical Y2K efforts and TPS report cover-sheet standardization.
+    bullets:
+      - "Optimized weekend workloads by eliminating unnecessary Saturday shifts"
+      - "Chaired the Anti-Printer-Jam Working Group"
+  - company: "Initrode"
+    role: "Junior Developer"
+    start: "1997-06"
+    end: "1998-12"
+    summary: >
+      Assisted with enterprise integrations and coffee machine uptime initiatives.
+    bullets:
+      - "Implemented robust cover sheet reminder system"
+      - "Reduced printer-induced rage incidents by 42%"
+
+education:
+  - school: "Southwest Texas State University"
+    degree: "B.Sc. in Computer Science"
+    start: "1993"
+    end: "1997"
+
+projects:
+  - name: "TPS Cover Sheet Generator"
+    url: "https://example.com/tps"
+    summary: "CLI + web utility to ensure every TPS report has a compliant cover sheet."
+  - name: "Printer Jam Predictor"
+    url: "https://example.com/pjp"
+    summary: "Naive Bayes model predicting paper jam risk with questionable accuracy."
+
+skills:
+  - "Go"
+  - "Hugo"
+  - "Process Simplification"
+  - "Printer Decommissioning"
+
+spoken_languages:
+  - name: "English"
+    level: "Native"
+  - name: "Norwegian"
+    level: "Casual 'hei' level"
+
+# Optional contact block; if removed, Contact will not render.
+contact:
+  email: "peter.gibbons@example.com"
+  website: "https://initech.example.com/~pgibbons"
