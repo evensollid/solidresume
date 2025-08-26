@@ -31,7 +31,7 @@ Open http://localhost:1313 in your browser.
 
 - [ ] Basic Hugo site scaffolding
 - [ ] Data-driven CV content (YAML/JSON)
-- [ ] Multilingual setup (EN/NB)
+- [ ] Multilingual setup
 - [ ] Theming (light/dark toggle)
 - [ ] Print stylesheet for PDF export
 - [ ] SEO + structured data integration
