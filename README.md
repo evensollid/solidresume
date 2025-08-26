@@ -24,6 +24,7 @@ cd SolidResume
 
 # Start development server
 hugo server -D
+```
 
 Open http://localhost:1313 in your browser.
 
