@@ -24,7 +24,7 @@
     {{ range . }}
       <h3>{{ .role }}{{ if and .role .company }} — {{ end }}{{ .company }}</h3>
       <div class="meta">
-        {{ with .start }}{{ . }}{{ end }}{{ if and .start .end }} — {{ end }}{{ with .end }}{{ . }}{{ end }}
+        {{ with .start }}<time datetime="{{ . }}">{{ . }}</time>{{ end }}{{ if and .start .end }} — {{ end }}{{ with .end }}<time datetime="{{ . }}">{{ . }}</time>{{ end }}
       </div>
       {{ with .summary }}<p>{{ . }}</p>{{ end }}
       {{ with .bullets }}{{ if gt (len .) 0 }}<ul class="list">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}{{ end }}
@@ -40,7 +40,7 @@
     {{ range . }}
       <h3>{{ .degree }}{{ if and .degree .school }} — {{ end }}{{ .school }}</h3>
       <div class="meta">
-        {{ with .start }}{{ . }}{{ end }}{{ if and .start .end }} — {{ end }}{{ with .end }}{{ . }}{{ end }}
+        {{ with .start }}<time datetime="{{ . }}">{{ . }}</time>{{ end }}{{ if and .start .end }} — {{ end }}{{ with .end }}<time datetime="{{ . }}">{{ . }}</time>{{ end }}
       </div>
     {{ end }}
   </section>

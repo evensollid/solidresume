@@ -11,6 +11,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no">
   <meta name="description" content="{{ .Site.Params.siteDescription }}">
   {{ partial "head/seo.html" . }}
   <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
@@ -33,14 +34,23 @@
 <body>
   <main class="container" role="main">
     <header>
+      {{ $cv := index .Site.Data.cv .Site.Language.Lang }}
+      {{ $name := or $cv.profile.name .Site.Title }}
       <div>
-        {{ $cv := index .Site.Data.cv .Site.Language.Lang }}
-        <h1>{{ with $cv.profile.name }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}</h1>
+        <h1>{{ $name }}{{ with .Site.Params.author.image }}<img src="{{ . }}" alt="{{ $name }}" class="author-img" />{{ end }}</h1>
         <div class="meta">
           {{ with $cv.profile.role }}{{ . }}{{ end }}{{ if and $cv.profile.role $cv.profile.location }} · {{ end }}
           {{ with $cv.profile.location }}{{ . }}{{ end }}
         </div>
       </div>
+      {{ if gt (len .Sites) 1 }}
+      {{ $others := where .Sites "Language.Lang" "ne" .Site.Language.Lang }}
+      <nav class="lang-switcher">
+        {{ range $i, $s := $others }}
+          <a href="{{ $s.Home.RelPermalink }}">{{ $s.Language.LanguageName }}</a>{{ if lt (add $i 1) (len $others) }} · {{ end }}
+        {{ end }}
+      </nav>
+      {{ end }}
     </header>
 
     {{ partial "theme-guard.html" . }}

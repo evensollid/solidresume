@@ -30,7 +30,10 @@ footer a { color: inherit; text-decoration: underline; }
   max-width: 840px; margin: 2rem auto; padding: 0 1rem;
 }
 header { display:flex; justify-content: space-between; align-items: center; gap: 1rem; }
-h1, h2, h3 { line-height:1.25; margin: 1.25rem 0 .5rem; }
+h1 { line-height:1.25; margin: 1.25rem 0 .5rem; }
+header h1 { display:flex; align-items:center; gap:.5rem; }
+.author-img { width:48px; height:48px; border-radius:50%; }
+h2, h3 { line-height:1.25; margin: 1.25rem 0 .5rem; }
 .section { padding: 1rem 0; border-top: 1px solid var(--border); }
 .meta { color: var(--muted); font-size: .9rem; }
 .lang-switcher { font-size: .9rem; }
