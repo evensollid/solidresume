@@ -1,0 +1,7 @@
+label: "Light"
+tokens:
+  bg: "#ffffff"
+  fg: "#111111"
+  muted: "#666666"
+  accent: "#0b5fff"
+  border: "#e5e7eb"

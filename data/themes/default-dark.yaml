@@ -1,0 +1,7 @@
+label: "Dark"
+tokens:
+  bg: "#0b0e14"
+  fg: "#e6e6e6"
+  muted: "#9aa0a6"
+  accent: "#7aa2ff"
+  border: "#1f2937"

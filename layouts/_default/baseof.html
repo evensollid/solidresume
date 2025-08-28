@@ -1,5 +1,13 @@
 <!doctype html>
-<html lang="{{ .Site.Language.Lang }}">
+<html lang="{{ .Site.Language.Lang }}" {{/* data-theme set on <html> via params */}}
+  {{- $conf := .Site.Params.themes -}}
+  {{- $def  := cond (and $conf (isset $conf "default")) $conf.default "auto" -}}
+  {{- if ne $def "auto" -}}
+    {{- if (index site.Data.themes $def) -}}
+      data-theme="{{ $def }}"
+    {{- end -}}
+  {{- end -}}
+>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,6 +17,9 @@
 
   {{ $site := resources.Get "css/site.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $site.RelPermalink }}" integrity="{{ $site.Data.Integrity }}" />
+
+  {{ $themes := resources.Get "css/themes.css" | resources.ExecuteAsTemplate "css/themes.gen.css" . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $themes.RelPermalink }}" integrity="{{ $themes.Data.Integrity }}" />
 
   {{ $print := resources.Get "css/print.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $print.RelPermalink }}" integrity="{{ $print.Data.Integrity }}" media="print" />
@@ -30,31 +41,13 @@
           {{ with $cv.profile.location }}{{ . }}{{ end }}
         </div>
       </div>
-      {{ $current := .Site.Language.Lang }}
-      {{ $alternates := where .Sites "Language.Lang" "ne" $current }}
-      {{ if gt (len $alternates) 0 }}
-      <nav class="lang-switcher">
-        {{ range $i, $lang := $alternates }}
-          <a href="{{ $lang.Home.RelPermalink }}">{{ $lang.Language.LanguageName }}</a>{{ if lt (add $i 1) (len $alternates) }} · {{ end }}
-        {{ end }}
-      </nav>
-      {{ end }}
-      {{/* theme toggle removed: color scheme configured in config */}}
     </header>
+
+    {{ partial "theme-guard.html" . }}
 
     {{ block "main" . }}{{ end }}
 
     {{ partial "footer.html" . }}
   </main>
-
-  <script>
-    (function(){
-      const root = document.documentElement;
-      const mode = "{{ .Site.Params.colorScheme | default "auto" }}";
-      if(mode === "light"){ root.style.colorScheme = "light"; }
-      else if(mode === "dark"){ root.style.colorScheme = "dark"; }
-      else { root.style.colorScheme = ""; } // auto
-    })();
-  </script>
 </body>
 </html>

@@ -1,0 +1,38 @@
+{{- /* 
+Generates CSS variables for each theme under html[data-theme="<key>"].
+Fallbacks to default-light tokens. Auto mode = no data-theme attribute:
+  - :root uses default-light
+  - @media (prefers-color-scheme: dark) swaps to default-dark
+*/ -}}
+{{- $themes := site.Data.themes -}}
+{{- $light := index $themes "default-light" -}}
+{{- $dark  := index $themes "default-dark"  -}}
+
+/* Auto mode (no data-theme) -> light by default, dark by media query */
+:root{
+  --bg: {{ $light.tokens.bg }};
+  --fg: {{ $light.tokens.fg }};
+  --muted: {{ $light.tokens.muted }};
+  --accent: {{ $light.tokens.accent }};
+  --border: {{ $light.tokens.border }};
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg: {{ $dark.tokens.bg }};
+    --fg: {{ $dark.tokens.fg }};
+    --muted: {{ $dark.tokens.muted }};
+    --accent: {{ $dark.tokens.accent }};
+    --border: {{ $dark.tokens.border }};
+  }
+}
+
+/* Explicit named themes */
+{{- range $name, $def := $themes -}}
+html[data-theme="{{ $name }}"]{
+  --bg: {{ or $def.tokens.bg $light.tokens.bg }};
+  --fg: {{ or $def.tokens.fg $light.tokens.fg }};
+  --muted: {{ or $def.tokens.muted $light.tokens.muted }};
+  --accent: {{ or $def.tokens.accent $light.tokens.accent }};
+  --border: {{ or $def.tokens.border $light.tokens.border }};
+}
+{{- end -}}

@@ -14,8 +14,10 @@ home = ["HTML", "RSS", "JSON"]
 
 [params]
 siteDescription = "SolidResume — single-page CV powered by Hugo"
-colorScheme = "auto" # auto|light|dark
 printVersion = true
+
+[params.themes]
+default = "auto"
 
 [markup.goldmark.renderer]
 unsafe = true
