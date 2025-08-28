@@ -36,3 +36,15 @@ unsafe = true
     languageName = "Norsk"
     weight = 2
     title = "CV — Peter Gibbons"
+
+[module]
+  [[module.exports]]
+    path = "layouts"
+  [[module.exports]]
+    path = "assets"
+  [[module.exports]]
+    path = "i18n"
+  [[module.exports]]
+    path = "archetypes"
+  [[module.exports]]
+    path = "data/themes"   # bare paletter, ikke person-CV
