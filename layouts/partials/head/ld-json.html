@@ -1,17 +1,27 @@
 {{ $cv := index .Site.Data.cv .Site.Language.Lang }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person"{{ with $cv.profile.name }},
-  "name": {{ . | jsonify }}{{ end }}{{ with $cv.profile.role }},
-  "jobTitle": {{ . | jsonify }}{{ end }}{{ with $cv.profile.location }},
-  "homeLocation": {{ . | jsonify }}{{ end }}{{ with $cv.profile.email }},
-  "email": {{ . | jsonify }}{{ end }}{{ with $cv.profile.url }},
-  "url": {{ . | jsonify }}{{ end }}{{ with $cv.profile.links }}{{ if gt (len .) 0 }},
-  "sameAs": [
-    {{- $urls := slice -}}
-    {{- range . -}}{{- $urls = $urls | append .url -}}{{- end -}}
-    {{- delimit (apply $urls "jsonify" ".") ", " -}}
-  ]{{ end }}{{ end }}
-}
-</script>
+{{ $person := dict "@context" "https://schema.org" "@type" "Person" }}
+{{ with $cv.profile.name }}
+  {{ $person = merge $person (dict "name" .) }}
+{{ end }}
+{{ with $cv.profile.role }}
+  {{ $person = merge $person (dict "jobTitle" .) }}
+{{ end }}
+{{ with $cv.profile.location }}
+  {{ $person = merge $person (dict "homeLocation" .) }}
+{{ end }}
+{{ with $cv.profile.email }}
+  {{ $person = merge $person (dict "email" .) }}
+{{ end }}
+{{ with $cv.profile.url }}
+  {{ $person = merge $person (dict "url" .) }}
+{{ end }}
+{{ with $cv.profile.links }}
+  {{ if gt (len .) 0 }}
+    {{ $urls := slice }}
+    {{ range . }}
+      {{ $urls = $urls | append .url }}
+    {{ end }}
+    {{ $person = merge $person (dict "sameAs" $urls) }}
+  {{ end }}
+{{ end }}
+<script type="application/ld+json">{{ $person | jsonify | safeJS }}</script>
