@@ -11,9 +11,9 @@ profile:
     simplifying processes, and protecting staplers at all costs.
   links:
     - label: "LinkedIn"
-      url: "https://www.linkedin.com/in/petergibbons"
+      url: "#"
     - label: "GitHub"
-      url: "https://github.com/pgibbons"
+      url: "#"
 
 # Remove 'experience' entirely or make it an empty list to hide the section.
 experience:

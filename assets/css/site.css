@@ -29,14 +29,17 @@ footer a { color: inherit; text-decoration: underline; }
 .container {
   max-width: 840px; margin: 2rem auto; padding: 0 1rem;
 }
-header { display:flex; justify-content: space-between; align-items: center; gap: 1rem; }
+header { display:flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
 h1 { line-height:1.25; margin: 1.25rem 0 .5rem; }
-header h1 { display:flex; align-items:center; gap:.5rem; }
-.author-img { width:48px; height:48px; border-radius:50%; }
+/* Image aligned to far right (as its own flex item) */
+.author-img { width:120px; height:120px; border-radius:50%; object-fit:cover; border:3px solid #fff; box-shadow: 0 2px 12px rgba(0,0,0,.18); }
 h2, h3 { line-height:1.25; margin: 1.25rem 0 .5rem; }
 .section { padding: 1rem 0; border-top: 1px solid var(--border); }
+.section:first-of-type { border-top: 0; }
 .meta { color: var(--muted); font-size: .9rem; }
-.lang-switcher { font-size: .9rem; }
+.lang-switcher { font-size: .9rem; width:100%; flex-basis:100%; order:-1; display:block; padding-bottom:.5rem; margin-bottom:.75rem; border-bottom:1px solid var(--border); }
+.lang-switcher a { text-decoration: none; }
+.lang-switcher .current-lang { color: var(--muted); cursor: default; }
 .list { margin: .5rem 0 0 0; padding-left: 1.25rem; }
 .badge { display:inline-block; border:1px solid var(--border); border-radius:.5rem; padding:.15rem .5rem; margin:.15rem; font-size:.85rem; }
 @media (max-width: 600px){

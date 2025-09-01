@@ -36,20 +36,29 @@
     <header>
       {{ $cv := index .Site.Data.cv .Site.Language.Lang }}
       {{ $name := or $cv.profile.name .Site.Title }}
+
+      <nav class="lang-switcher" aria-label="Language selector">
+        {{ $all := .Sites }}
+        {{ range $i, $s := $all }}
+          {{ if eq $s.Language.Lang $.Site.Language.Lang }}
+            <span class="current-lang">{{ $s.Language.LanguageName }}</span>
+          {{ else }}
+            <a href="{{ $s.Home.RelPermalink }}">{{ $s.Language.LanguageName }}</a>
+          {{ end }}
+          {{ if lt (add $i 1) (len $all) }} · {{ end }}
+        {{ end }}
+      </nav>
+
       <div>
-        <h1>{{ $name }}{{ with .Site.Params.author.image }}<img src="{{ . }}" alt="{{ $name }}" class="author-img" />{{ end }}</h1>
+        <h1>{{ $name }}</h1>
         <div class="meta">
           {{ with $cv.profile.role }}{{ . }}{{ end }}{{ if and $cv.profile.role $cv.profile.location }} · {{ end }}
           {{ with $cv.profile.location }}{{ . }}{{ end }}
         </div>
       </div>
-      {{ if gt (len .Sites) 1 }}
-      {{ $others := where .Sites "Language.Lang" "ne" .Site.Language.Lang }}
-      <nav class="lang-switcher">
-        {{ range $i, $s := $others }}
-          <a href="{{ $s.Home.RelPermalink }}">{{ $s.Language.LanguageName }}</a>{{ if lt (add $i 1) (len $others) }} · {{ end }}
-        {{ end }}
-      </nav>
+
+      {{ with .Site.Params.author.image }}
+        <img src="{{ . }}" alt="{{ $name }}" class="author-img" />
       {{ end }}
     </header>
 

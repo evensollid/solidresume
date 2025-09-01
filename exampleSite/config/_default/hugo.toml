@@ -13,8 +13,8 @@ printVersion = true
 [params.themes]
 default = "auto"
 
-[markup.goldmark.renderer]
-unsafe = true
+[params.author]
+image = "/img/pgibbons.jpg"
 
 [languages]
   [languages.en]

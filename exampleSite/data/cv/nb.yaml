@@ -9,9 +9,9 @@ profile:
     og beskytte røde stiftemaskiner.
   links:
     - label: "LinkedIn"
-      url: "https://www.linkedin.com/in/petergibbons"
+      url: "#"
     - label: "GitHub"
-      url: "https://github.com/pgibbons"
+      url: "#"
 
 experience:
   - company: "Initech"
