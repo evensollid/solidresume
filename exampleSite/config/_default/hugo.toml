@@ -16,6 +16,9 @@ default = "auto"
 [params.author]
 image = "/img/pgibbons.jpg"
 
+[params.author]
+image = "/img/pgibbons.jpg"
+
 [languages]
   [languages.en]
     languageName = "English"
@@ -29,4 +32,3 @@ image = "/img/pgibbons.jpg"
   # Explicitly import the parent theme/module
   [[module.imports]]
     path = "github.com/evensollid/SolidResume"
-

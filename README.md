@@ -34,6 +34,17 @@ hugo server -D
 
 Open http://localhost:1313 in your browser to see your CV.
 
+### Local test site (exampleSite)
+
+This repo includes an `exampleSite/` folder with dummy CV data for local testing only. The root module contains no example content; all placeholder data lives under `exampleSite/data/`.
+
+Run the example site locally:
+
+```bash
+cd exampleSite
+hugo server -D --cacheDir "$PWD/.hugo_cache"
+```
+
 ## Theming
 
 SolidResume supports multiple color palettes out of the box:
