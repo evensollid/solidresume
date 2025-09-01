@@ -1,5 +1,11 @@
-<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
-<meta property="og:title" content="{{ .Title }}">
+{{/* Finn språknavn: bruk LanguageName hvis satt, ellers .Site.Language.Lang */}}
+{{ $langName := or .Site.Language.LanguageName .Site.Language.Lang }}
+
+{{/* Bygg tittel som "TITLE - CV - SPRÅKNAVN" */}}
+{{ $fullTitle := printf "%s - CV - %s" .Site.Title $langName }}
+
+<title>{{ $fullTitle }}</title>
+<meta property="og:title" content="{{ $fullTitle }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="{{ .Site.Language.Lang }}">

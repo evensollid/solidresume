@@ -32,12 +32,12 @@ unsafe = true
   [languages.en]
     languageName = "English"
     weight = 1
-    title = "CV — Peter Gibbons"
+    
 
   [languages.nb]
     languageName = "Norsk"
     weight = 2
-    title = "CV — Peter Gibbons"
+    
 
 [module]
   [[module.exports]]
