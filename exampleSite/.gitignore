@@ -1,0 +1,6 @@
+# Hugo build artifacts for the example site
+public/
+resources/
+.hugo_cache/
+.hugo_build.lock
+

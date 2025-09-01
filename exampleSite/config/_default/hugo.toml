@@ -1,0 +1,32 @@
+baseURL = "/"
+languageCode = "en"
+title = "SolidResume Example"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "section"]
+
+[params]
+siteDescription = "SolidResume — single-page CV example"
+printVersion = true
+
+[params.themes]
+default = "auto"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+
+  [languages.nb]
+    languageName = "Norsk"
+    weight = 2
+
+[module]
+  # Explicitly import the parent theme/module
+  [[module.imports]]
+    path = "github.com/evensollid/SolidResume"
+
