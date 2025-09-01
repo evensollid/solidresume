@@ -1,0 +1,65 @@
+profile:
+  name: "ピーター・ギボンズ"
+  role: "ソフトウェアエンジニア（TPSレポート嫌い）"
+  location: "テキサス州オースティン"
+  email: "peter.gibbons@example.com"
+  url: "https://initech.example.com/~pgibbons"
+  summary: >
+    成果志向のエンジニア。不要な官僚主義を取り除き、プロセスを簡素化し、
+    あらゆる手段でホッチキスを守ることを信条とする。
+  links:
+    - label: "LinkedIn"
+      url: "#"
+    - label: "GitHub"
+      url: "#"
+
+experience:
+  - company: "イニテック (Initech)"
+    role: "ソフトウェアエンジニア"
+    start: "1999-01"
+    end: "2001-05"
+    summary: >
+      重要なY2K対応やTPSレポート表紙の標準化に貢献。
+    bullets:
+      - "不要な土曜出勤を廃止し、週末の業務負荷を最適化。"
+      - "プリンタ紙詰まり対策ワーキンググループの座長。"
+  - company: "イニトロード (Initrode)"
+    role: "ジュニアデベロッパー"
+    start: "1997-06"
+    end: "1998-12"
+    summary: >
+      エンタープライズ統合やコーヒーマシン稼働率向上の取り組みを支援。
+    bullets:
+      - "堅牢な表紙添付リマインダーシステムを実装。"
+      - "プリンタによる怒りの発生件数を42%削減。"
+
+education:
+  - school: "サウスウエスト・テキサス州立大学"
+    degree: "コンピュータサイエンス学士"
+    start: "1993"
+    end: "1997"
+
+projects:
+  - name: "TPS Cover Sheet Generator"
+    url: "https://example.com/tps"
+    summary: "すべてのTPSレポートに準拠した表紙を付けるためのCLI/ウェブユーティリティ。"
+  - name: "Printer Jam Predictor"
+    url: "https://example.com/pjp"
+    summary: "紙詰まりリスクを（やや疑わしい精度で）予測するナイーブベイズモデル。"
+
+skills:
+  - "Go"
+  - "Hugo"
+  - "プロセス簡素化"
+  - "プリンタ撤去"
+
+spoken_languages:
+  - name: "英語"
+    level: "母語"
+  - name: "ノルウェー語"
+    level: "あいさつ程度"
+
+contact:
+  email: "peter.gibbons@example.com"
+  website: "https://initech.example.com/~pgibbons"
+

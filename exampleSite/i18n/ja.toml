@@ -1,0 +1,24 @@
+[about]
+other = "概要"
+
+[experience]
+other = "職務経歴"
+
+[education]
+other = "学歴"
+
+[projects]
+other = "プロジェクト"
+
+[skills]
+other = "スキル"
+
+[languages]
+other = "言語"
+
+[contact]
+other = "連絡先"
+
+[download_pdf]
+other = "PDFをダウンロード"
+

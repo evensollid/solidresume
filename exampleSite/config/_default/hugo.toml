@@ -16,9 +16,6 @@ default = "auto"
 [params.author]
 image = "/img/pgibbons.jpg"
 
-[params.author]
-image = "/img/pgibbons.jpg"
-
 [languages]
   [languages.en]
     languageName = "English"
@@ -27,6 +24,10 @@ image = "/img/pgibbons.jpg"
   [languages.nb]
     languageName = "Norsk"
     weight = 2
+  
+  [languages.ja]
+    languageName = "日本語"
+    weight = 3
 
 [module]
   # Explicitly import the parent theme/module
