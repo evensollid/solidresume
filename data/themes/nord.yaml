@@ -1,8 +1,7 @@
-# Nord
 label: "Nord"
 tokens:
-  bg:   "#2e3440"
-  fg:   "#e5e9f0"
-  muted:"#81a1c1"
-  accent:"#88c0d0"
-  border:"#3b4252"
+  bg: "#2e3440"    # nord0
+  fg: "#e5e9f0"    # nord6
+  muted: "#81a1c1" # nord9
+  accent: "#88c0d0" # nord8
+  border: "#3b4252" # nord1

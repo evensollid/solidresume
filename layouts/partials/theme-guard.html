@@ -1,5 +1,5 @@
 {{/* Dev-only guard: warns if configured theme doesn't exist. */}}
-{{- if .Site.IsServer -}}
+{{- if hugo.IsServer -}}
   {{- $conf := .Site.Params.themes -}}
   {{- $def  := cond (and $conf (isset $conf "default")) $conf.default "auto" -}}
   {{- if and (ne $def "auto") (not (index site.Data.themes $def)) -}}
