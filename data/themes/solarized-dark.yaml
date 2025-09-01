@@ -1,8 +1,8 @@
 # Solarized Dark
 label: "Solarized Dark"
 tokens:
-  bg:   "#002b36"
-  fg:   "#839496"
-  muted:"#586e75"
-  accent:"#b58900"
-  border:"#073642"
+  bg: "#002b36"
+  fg: "#839496"
+  muted: "#586e75"
+  accent: "#b58900"
+  border: "#073642"
