@@ -6,6 +6,12 @@ defaultContentLanguageInSubdir = true
 enableRobotsTXT = true
 disableKinds = ["taxonomy", "term", "section"]
 
+[pagination]
+pagerSize = 1
+
+[outputs]
+home = ["HTML", "RSS"]
+
 [params]
 siteDescription = "SolidResume — single-page CV example"
 printVersion = true
@@ -15,6 +21,15 @@ default = "auto"
 
 [params.author]
 image = "/img/pgibbons.jpg"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[privacy]
+  [privacy.youtube]
+  disabled = true
+  [privacy.twitter]
+  disabled = true
 
 [languages]
   [languages.en]

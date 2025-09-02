@@ -45,6 +45,24 @@ cd exampleSite
 hugo server -D --cacheDir "$PWD/.hugo_cache"
 ```
 
+## Configuration Boundary
+
+This module intentionally does not define site-level settings. Consumers must set these in their own site config (`config/_default/hugo.toml`), while the module only exports layouts, assets, i18n, archetypes, and theme data.
+
+- Set in your site:
+  - `baseURL`, `languageCode`, `title`
+  - `defaultContentLanguage`, `defaultContentLanguageInSubdir`
+  - `[languages]` (and per-language params)
+  - `[outputs]`, `[pagination]`
+  - `[params]` (including theme defaults and author image)
+  - `[markup.goldmark.renderer].unsafe`
+  - `[privacy]`
+
+- Provided by the module:
+  - `layouts/`, `assets/`, `i18n/`, `archetypes/`, `data/themes/`
+
+Use `exampleSite/config/_default/hugo.toml` as a reference for a working setup, and copy only what you need into your own site.
+
 ## Theming
 
 SolidResume supports multiple color palettes out of the box:
