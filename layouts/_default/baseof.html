@@ -37,6 +37,7 @@
       {{ $cv := index .Site.Data.cv .Site.Language.Lang }}
       {{ $name := or $cv.profile.name .Site.Title }}
 
+      {{ if gt (len .Sites) 1 }}
       <nav class="lang-switcher" aria-label="Language selector">
         {{ $all := .Sites }}
         {{ range $i, $s := $all }}
@@ -48,6 +49,7 @@
           {{ if lt (add $i 1) (len $all) }} · {{ end }}
         {{ end }}
       </nav>
+      {{ end }}
 
       <div>
         <h1>{{ $name }}</h1>
