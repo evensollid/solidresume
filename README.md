@@ -22,7 +22,7 @@ hugo mod init github.com/<your-username>/MyCV
 ```toml
 [module]
   [[module.imports]]
-    path = "github.com/solids/resume"
+    path = "github.com/evensollid/SolidResume"
 ```
 
 3. Place your CV data (YAML/JSON) inside your site's `data/` directory. SolidResume reads CV content from the consuming project's data files, not from within the module itself.
@@ -82,6 +82,95 @@ In your `config/_default/hugo.toml`, set the default theme:
 [params.themes]
 default = "auto"
 ```
+
+## Install & Update (Hugo Modules)
+
+- Install:
+  - Initialize your site (if not already):
+    ```bash
+    hugo new site MyCV && cd MyCV
+    hugo mod init github.com/<your-username>/MyCV
+    ```
+  - Add the module import to `config/_default/hugo.toml`:
+    ```toml
+    [module]
+      [[module.imports]]
+        path = "github.com/evensollid/SolidResume"
+    ```
+  - Download dependencies and prune unused ones:
+    ```bash
+    hugo mod get github.com/evensollid/SolidResume@latest
+    hugo mod tidy
+    ```
+
+- Pin a version:
+  - Choose a tag and pin in your module cache:
+    ```bash
+    hugo mod get github.com/evensollid/SolidResume@vX.Y.Z
+    hugo mod tidy
+    ```
+  - Your site’s `go.mod` will record the pinned version.
+
+- Update later:
+  - Get the newest compatible version:
+    ```bash
+    hugo mod get -u github.com/evensollid/SolidResume
+    hugo mod tidy
+    ```
+  - Or jump to a specific tag:
+    ```bash
+    hugo mod get github.com/evensollid/SolidResume@vX.Y.Z
+    ```
+
+- Optional: Vendor the module (offline/CI stability):
+  ```bash
+  hugo mod vendor
+  ```
+  This writes dependencies to `/_vendor/`. Commit that directory to keep builds reproducible without network access. To stop using vendor, remove `/_vendor/` and run `hugo mod tidy`.
+
+## Troubleshooting Modules
+
+- Check module graph: See what Hugo resolves and from where.
+  ```bash
+  hugo mod graph
+  ```
+
+- Clean cache: Fix stale downloads or version drift.
+  ```bash
+  hugo mod clean
+  hugo mod tidy
+  ```
+
+- Clear vendored deps: If using `/_vendor/`, remove it to force re-resolve.
+  ```bash
+  rm -rf _vendor/
+  hugo mod tidy
+  ```
+
+- Cache directory errors: If you see “cacheDir must resolve to an absolute directory”, pass an absolute path.
+  ```bash
+  hugo --cacheDir "$PWD/.hugo_cache"
+  ```
+
+- Network-restricted builds: Prefer vendoring for CI/offline.
+  ```bash
+  hugo mod vendor
+  ```
+
+- Update Hugo: Module issues often clear up by updating to a recent Hugo Extended.
+  ```bash
+  hugo version
+  # Install or upgrade per your OS
+  ```
+
+- Local development against a fork: Use in your own site only (not in production) to test local changes.
+  ```toml
+  [module]
+    [[module.imports]]
+      path = "github.com/evensollid/SolidResume"
+  # go.mod in your site (not in this module)
+  # replace github.com/evensollid/SolidResume => ../path/to/local/module
+  ```
 
 ## Languages
 
