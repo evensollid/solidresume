@@ -1,0 +1,11 @@
+{{- $v := . | safeHTML -}}
+{{- $s := printf "%v" $v -}}
+{{- $isoYear := gt (len (findRE `^\d{4}$` $s)) 0 -}}
+{{- $isoYearMonth := gt (len (findRE `^\d{4}-\d{2}$` $s)) 0 -}}
+{{- $isoFull := gt (len (findRE `^\d{4}-\d{2}-\d{2}$` $s)) 0 -}}
+{{- if or $isoYear $isoYearMonth $isoFull -}}
+  <time datetime="{{ $s }}">{{ $s }}</time>
+{{- else -}}
+  <span>{{ $s }}</span>
+{{- end -}}
+
