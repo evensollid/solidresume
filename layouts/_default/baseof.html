@@ -42,7 +42,7 @@
         {{ $all := .Sites }}
         {{ range $i, $s := $all }}
           {{ if eq $s.Language.Lang $.Site.Language.Lang }}
-            <span class="current-lang">{{ $s.Language.LanguageName }}</span>
+            <span class="current-lang" aria-current="true">{{ $s.Language.LanguageName }}</span>
           {{ else }}
             <a href="{{ $s.Home.RelPermalink }}">{{ $s.Language.LanguageName }}</a>
           {{ end }}
