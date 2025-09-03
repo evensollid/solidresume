@@ -278,7 +278,10 @@ contact:                       # optional; renders a simple list
 
 Notes:
 - Any top‑level section can be omitted; templates only render sections that are present and non‑empty.
-- Dates are displayed as provided; use consistent ISO formats for clarity.
+- Dates:
+  - Use ISO formats `YYYY`, `YYYY-MM`, or `YYYY-MM-DD` for `start`/`end` to get machine‑readable `<time datetime="…">` markup.
+  - For ongoing roles, set `end: "Present"` (or your localized equivalent). Non‑ISO values render as plain text (not inside `datetime`) to keep HTML5 valid.
+  - Alternatively, omit `end` entirely for current roles.
 - Links in `profile.links` render inline with separators.
 - Data is read from the consuming site, not from within the module.
 
