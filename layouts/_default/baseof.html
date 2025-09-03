@@ -32,7 +32,7 @@
   {{- end -}}
 </head>
 <body>
-  <main class="container" role="main">
+  <main class="container">
     <header>
       {{ $cv := index .Site.Data.cv .Site.Language.Lang }}
       {{ $name := or $cv.profile.name .Site.Title }}
