@@ -22,3 +22,5 @@ other = "連絡先"
 [download_pdf]
 other = "PDFをダウンロード"
 
+[generated_with]
+other = "生成:"

@@ -14,3 +14,6 @@ other = "Languages"
 other = "Contact"
 [download_pdf]
 other = "Download PDF"
+
+[generated_with]
+other = "Generated with"
