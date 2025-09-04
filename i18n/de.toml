@@ -1,0 +1,27 @@
+[about]
+other = "Über mich"
+
+[experience]
+other = "Erfahrung"
+
+[education]
+other = "Ausbildung"
+
+[projects]
+other = "Projekte"
+
+[skills]
+other = "Fähigkeiten"
+
+[languages]
+other = "Sprachen"
+
+[contact]
+other = "Kontakt"
+
+[download_pdf]
+other = "Drucken oder PDF herunterladen"
+
+[generated_with]
+other = "Erstellt mit"
+

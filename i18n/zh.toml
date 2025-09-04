@@ -1,0 +1,27 @@
+[about]
+other = "关于"
+
+[experience]
+other = "经历"
+
+[education]
+other = "教育"
+
+[projects]
+other = "项目"
+
+[skills]
+other = "技能"
+
+[languages]
+other = "语言"
+
+[contact]
+other = "联系"
+
+[download_pdf]
+other = "打印或下载 PDF"
+
+[generated_with]
+other = "生成："
+

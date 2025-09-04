@@ -1,0 +1,27 @@
+[about]
+other = "Over"
+
+[experience]
+other = "Ervaring"
+
+[education]
+other = "Opleiding"
+
+[projects]
+other = "Projecten"
+
+[skills]
+other = "Vaardigheden"
+
+[languages]
+other = "Talen"
+
+[contact]
+other = "Contact"
+
+[download_pdf]
+other = "Afdrukken of PDF downloaden"
+
+[generated_with]
+other = "Gegenereerd met"
+

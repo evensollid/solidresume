@@ -1,0 +1,27 @@
+[about]
+other = "Um"
+
+[experience]
+other = "Reynsla"
+
+[education]
+other = "Menntun"
+
+[projects]
+other = "Verkefni"
+
+[skills]
+other = "Hæfni"
+
+[languages]
+other = "Tungumál"
+
+[contact]
+other = "Hafa samband"
+
+[download_pdf]
+other = "Prenta eða hlaða niður PDF"
+
+[generated_with]
+other = "Útbúið með"
+

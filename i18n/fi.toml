@@ -1,0 +1,27 @@
+[about]
+other = "Tietoja"
+
+[experience]
+other = "Kokemus"
+
+[education]
+other = "Koulutus"
+
+[projects]
+other = "Projektit"
+
+[skills]
+other = "Taidot"
+
+[languages]
+other = "Kielet"
+
+[contact]
+other = "Yhteystiedot"
+
+[download_pdf]
+other = "Tulosta tai lataa PDF"
+
+[generated_with]
+other = "Luotu käyttäen"
+

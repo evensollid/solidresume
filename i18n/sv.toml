@@ -1,0 +1,27 @@
+[about]
+other = "Om"
+
+[experience]
+other = "Erfarenhet"
+
+[education]
+other = "Utbildning"
+
+[projects]
+other = "Projekt"
+
+[skills]
+other = "Färdigheter"
+
+[languages]
+other = "Språk"
+
+[contact]
+other = "Kontakt"
+
+[download_pdf]
+other = "Skriv ut eller ladda ner PDF"
+
+[generated_with]
+other = "Genererad med"
+
