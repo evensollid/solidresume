@@ -194,6 +194,24 @@ defaultContentLanguageInSubdir = true
 
 The language switcher shows all configured languages; the current language is not a link.
 
+### Built-in UI translations
+
+This module ships with i18n files for these languages. Add the language under `[languages]` in your site config to use them; site-level `i18n/<lang>.toml` files override the module’s strings.
+
+- en (English)
+- nb (Norwegian Bokmål)
+- ja (Japanese)
+- zh (Chinese)
+- es (Spanish)
+- fr (French)
+- pt (Portuguese)
+- de (German)
+- da (Danish)
+- sv (Swedish)
+- fi (Finnish)
+- nl (Dutch)
+- is (Icelandic)
+
 ## Author Image
 
 Place your avatar in `static/` and set:
