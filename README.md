@@ -3,9 +3,7 @@
 **SolidResume** is a work-in-progress Hugo Module for building a **single-page CV** website.  
 The goal is to provide a clean, responsive, and printable design that follows modern web standards and produces structured, machine-readable data where appropriate.
 
-> ⚠️ This project is **under active development**. Expect breaking changes, incomplete features, and frequent iterations.
-
-## Getting Started
+## Quickstart
 
 ### Using SolidResume as a Hugo Module
 
@@ -25,9 +23,15 @@ hugo mod init github.com/<your-username>/MyCV
     path = "github.com/evensollid/SolidResume"
 ```
 
-3. Place your CV data (YAML/JSON) inside your site's `data/` directory. SolidResume reads CV content from the consuming project's data files, not from within the module itself.
+3. Download the module and tidy dependencies:
+```bash
+hugo mod get github.com/evensollid/SolidResume@latest
+hugo mod tidy
+```
 
-4. Start the development server:
+4. Place your CV data (YAML/JSON) inside your site's `data/` directory. SolidResume reads CV content from the consuming project's data files, not from within the module itself.
+
+5. Start the development server:
 ```bash
 hugo server -D
 ```
@@ -36,14 +40,7 @@ Open http://localhost:1313 in your browser to see your CV.
 
 ### Local test site (exampleSite)
 
-This repo includes an `exampleSite/` folder with dummy CV data for local testing only. The root module contains no example content; all placeholder data lives under `exampleSite/data/`.
-
-Run the example site locally:
-
-```bash
-cd exampleSite
-hugo server -D --cacheDir "$PWD/.hugo_cache"
-```
+This repo includes an `exampleSite/` folder with dummy CV data for local testing only. The root module contains no example content; all placeholder data lives under `exampleSite/data/`. If you want to test and develop against the example site, see the [exampleSite/README.md](exampleSite/README.md) for more information.
 
 ## Configuration Boundary
 
@@ -85,23 +82,11 @@ default = "auto"
 
 ## Install & Update (Hugo Modules)
 
-- Install:
-  - Initialize your site (if not already):
-    ```bash
-    hugo new site MyCV && cd MyCV
-    hugo mod init github.com/<your-username>/MyCV
-    ```
-  - Add the module import to `config/_default/hugo.toml`:
-    ```toml
-    [module]
-      [[module.imports]]
-        path = "github.com/evensollid/SolidResume"
-    ```
-  - Download dependencies and prune unused ones:
-    ```bash
-    hugo mod get github.com/evensollid/SolidResume@latest
-    hugo mod tidy
-    ```
+- Install (after adding the import in Quickstart):
+  ```bash
+  hugo mod get github.com/evensollid/SolidResume@latest
+  hugo mod tidy
+  ```
 
 - Pin a version:
   - Choose a tag and pin in your module cache:
