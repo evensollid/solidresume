@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://evensollid.github.io/SolidResume/"
 languageCode = "en"
 title = "SolidResume Example"
 defaultContentLanguage = "en"
