@@ -2,9 +2,10 @@ baseURL = "https://evensollid.github.io/SolidResume/"
 languageCode = "en"
 title = "SolidResume Example"
 defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = true
+defaultContentLanguageInSubdir = false
 enableRobotsTXT = true
 disableKinds = ["taxonomy", "term", "section"]
+canonifyURLs = true
 
 [pagination]
 pagerSize = 1
